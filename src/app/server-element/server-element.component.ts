@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, OnDestroy } from '@angular/core';
+// tslint:disable-next-line:max-line-length
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -15,6 +16,8 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
     content: string
   };
   @Input() name: string;
+
+  @ViewChild('heading') header: ElementRef;
 
   constructor() {
     console.log('constructor called');
@@ -42,6 +45,7 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
     //Add 'implements AfterContentInit' to the class.
     console.log('ngAfterContentInit');
   }
+
 
   ngAfterContentChecked() {
     //Called after every check of the component's or directive's content.
