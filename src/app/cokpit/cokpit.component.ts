@@ -17,6 +17,7 @@ export class CokpitComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   onAddServer(nameInput: HTMLInputElement) {
